@@ -11,8 +11,8 @@ let unionObject: { a: string | number }  = { a: 123 }
 
 
 //✅ union Type은 새로운 타입을 만드는 것이기 때문에 수학 연산 불가능
-let age: string | number
-age + 1
+let hi: string | number
+hi + 1
 // 에러 발생('+' 연산자를 'string | number' 및 'number' 형식에 적용할 수 없습니다.ts(2365))
 // string + 1(가능)
 // number + 1(가능)
@@ -56,3 +56,25 @@ safety = {}
 
 let b :string = safety
 //unknown - 에러 발생('unknown' 형식은 'string' 형식에 할당할 수 없습니다.ts(2322))
+
+
+//과제1
+let user: string = 'kim';
+let age: undefined | number = undefined;
+let married: boolean = false; 
+let 철수: (string | undefined | number | boolean)[] = [user, age, married];
+
+
+//과제2
+let 학교: {
+  score: (number | boolean)[],
+  teacher : string,
+  friend : string | string[]
+} = {
+  score: [100, 97, 84],
+  teacher : 'Phil',
+  friend : 'John'
+}
+
+학교.score[4] = false;
+학교.friend = ['Lee' , 학교.teacher]
